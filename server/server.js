@@ -8,7 +8,8 @@ const { auth } = require("./middlewares/auth");
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.DATABASE, {
+
+mongoose.connect(config.DATABASE_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -20,6 +21,7 @@ const { Book } = require("./models/book");
 
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(express.static("client/build"));
 
 // GET
 app.get("/api/getBook", (req, res) => {
@@ -163,6 +165,13 @@ app.delete("/api/delete_book", (req, res) => {
     res.json(true);
   });
 });
+
+if (process.env.NODE_ENV === "production") {
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 3001;
 
