@@ -5,7 +5,7 @@ const config = {
   },
   development: {
     SECRET: "supersecretpass123",
-    DATABASE: "mongodb://localhost:27017/booksShelf"
+    DATABASE_URI: "mongodb://localhost:27017/booksShelf"
   }
 };
 
