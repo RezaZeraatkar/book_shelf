@@ -247,6 +247,7 @@ header .navItem span {
 .user_posts {
   padding: 10px;
   box-sizing: border-box;
+  overflow-x: auto;
 }
 
 .edit_confirm {
@@ -254,7 +255,7 @@ header .navItem span {
   color: #fff;
   padding: 10px 0px;
 }
-table {
+/* table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -269,7 +270,7 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
-}
+} */
 
 .user_container .avatar {
   text-align: center;

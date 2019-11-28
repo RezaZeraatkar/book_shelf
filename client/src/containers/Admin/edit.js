@@ -69,7 +69,7 @@ class EditReview extends Component {
 
   redirectUser = () => {
     setTimeout(() => {
-      this.props.history.push("/user/user_reviews");
+      this.props.history.push("/user/userReviews");
     }, 1000);
   };
 

@@ -21,13 +21,6 @@ function SidenavItems({ user }) {
     },
     {
       type: "navItem",
-      icon: "file-text-o",
-      text: "Add Admins",
-      link: "/user/register",
-      restricted: true
-    },
-    {
-      type: "navItem",
       icon: "sign-in",
       text: "Login",
       link: "/login",
@@ -51,9 +44,17 @@ function SidenavItems({ user }) {
     {
       type: "navItem",
       icon: "sign-out",
-      text: "Logout",
+      text: "Log Out",
       link: "/user/logout",
       restricted: true
+    },
+    {
+      type: "navItem",
+      icon: "file-text-o",
+      text: "Sign Up",
+      link: "/user/register",
+      restricted: false,
+      exclude: true
     }
   ];
 

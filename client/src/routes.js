@@ -21,7 +21,7 @@ export default function Routes() {
         <Route exact path="/user" component={Auth(User, true)} />
         <Route exact path="/user/logout" component={Auth(Logout, true)} />
         <Route exact path="/user/add" component={Auth(AddReview, true)} />
-        <Route exact path="/user/register" component={Auth(Register, true)} />
+        <Route exact path="/user/register" component={Auth(Register, false)} />
         <Route
           exact
           path="/user/edit_post/:id"

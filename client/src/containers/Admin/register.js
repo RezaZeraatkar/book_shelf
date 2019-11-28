@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { getUsers, registerUser } from "../../actions/actions";
+import { timingSafeEqual } from "crypto";
 
 class Register extends PureComponent {
   state = {
@@ -8,6 +9,7 @@ class Register extends PureComponent {
     lastname: "",
     email: "",
     password: "",
+    confirmPassword: "",
     errorMessage: "",
     successMessage: "",
     error: null
@@ -48,6 +50,10 @@ class Register extends PureComponent {
     this.setState({ password: e.target.value });
   };
 
+  handleInputConfirmPassword = e => {
+    this.setState({ confirmPassword: e.target.value });
+  };
+
   handleInputName = e => {
     this.setState({ name: e.target.value });
   };
@@ -59,17 +65,22 @@ class Register extends PureComponent {
   submitForm = e => {
     e.preventDefault();
     this.setState({ error: true });
-    this.props.dispatch(
-      registerUser(
-        {
-          email: this.state.email,
-          password: this.state.password,
-          name: this.state.name,
-          lastname: this.state.lastname
-        },
-        this.props.user.allUsers
-      )
-    );
+    const { password, confirmPassword } = this.state;
+    if (password !== confirmPassword) {
+      alert("Passwords don't match");
+    } else {
+      this.props.dispatch(
+        registerUser(
+          {
+            email: this.state.email,
+            password: this.state.password,
+            name: this.state.name,
+            lastname: this.state.lastname
+          },
+          this.props.user.allUsers
+        )
+      );
+    }
   };
 
   showUsers = users =>
@@ -88,7 +99,7 @@ class Register extends PureComponent {
     return (
       <div className="rl_container">
         <form onSubmit={this.submitForm}>
-          <h2>Add User</h2>
+          <h2>Sign Up</h2>
           <div className="form_element">
             <input
               type="text"
@@ -104,22 +115,30 @@ class Register extends PureComponent {
             />
             <input
               type="email"
-              placeholder="Enter email"
+              placeholder="* Enter email"
               value={this.state.email}
               onChange={this.handleInputEmail}
             />
             <input
               type="password"
-              placeholder="Enter password"
+              placeholder="* Enter password"
               value={this.state.password}
               onChange={this.handleInputPassword}
             />
             <p>* (at least 6 characters)</p>
+            <input
+              type="password"
+              placeholder="* Re-enter password"
+              value={this.state.confirmPassword}
+              onChange={this.handleInputConfirmPassword}
+            />
           </div>
-          <button type="submit">Add user</button>
+          <button type="submit">SignUp</button>
           <div className="error">{this.state.errorMessage}</div>
           <div className="successMessage">{this.state.successMessage}</div>
         </form>
+        <hr />
+        <h3>Current Users</h3>
         <div className="current_users">
           <table>
             <thead>
