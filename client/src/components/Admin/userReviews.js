@@ -28,7 +28,7 @@ class UserReviews extends Component {
   render() {
     const user = this.props.user;
     return (
-      <div className="">
+      <div>
         <h4>Your reviews</h4>
         <table className="table table-bordered">
           <thead>

@@ -89,7 +89,7 @@ class Register extends PureComponent {
           <tr key={eachUser._id}>
             <td>{eachUser.name}</td>
             <td>{eachUser.lastname}</td>
-            <td>{eachUser.email}</td>
+            <td style={{ textAlign: "left" }}>{eachUser.email}</td>
           </tr>
         ))
       : null;
@@ -140,7 +140,7 @@ class Register extends PureComponent {
         <hr />
         <h3>Current Users</h3>
         <div className="current_users">
-          <table>
+          <table className="table table-bordered">
             <thead>
               <tr>
                 <th>Name</th>

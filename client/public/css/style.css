@@ -250,6 +250,10 @@ header .navItem span {
   overflow-x: auto;
 }
 
+.current_users {
+  overflow-x: auto;
+}
+
 .edit_confirm {
   background: #8bc34a;
   color: #fff;

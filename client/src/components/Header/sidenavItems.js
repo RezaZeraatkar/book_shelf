@@ -44,14 +44,14 @@ function SidenavItems({ user }) {
     {
       type: "navItem",
       icon: "sign-out",
-      text: "Log Out",
+      text: "Logout",
       link: "/user/logout",
       restricted: true
     },
     {
       type: "navItem",
       icon: "file-text-o",
-      text: "Sign Up",
+      text: "Signup",
       link: "/user/register",
       restricted: false,
       exclude: true
@@ -59,12 +59,12 @@ function SidenavItems({ user }) {
   ];
 
   const element = (item, i) => (
-    <div key={i} className={item.type}>
-      <Link to={item.link}>
+    <Link to={item.link} key={i}>
+      <div className={item.type}>
         <FontAwesome name={item.icon} />
         {item.text}
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 
   const showItems = () =>
