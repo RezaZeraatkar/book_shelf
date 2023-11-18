@@ -2,7 +2,7 @@
 
 ## Overview
 The Bookshelf Application is a robust and efficient platform designed to manage your books. It is built using Node.js and Express.js, with MongoDB serving as the database through Mongoose. The application also implements user authentication using bcrypt and jsonwebtoken.
-This app was deployed on heroku free tier but due to new heroku pricing plans it's now out of access.
+**This app was deployed on heroku free tier but due to new heroku pricing plans it's now out of access.**
 ## Prerequisites
 - Node.js (version 12.x)
 - MongoDB
