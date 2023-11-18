@@ -34,4 +34,9 @@ The Bookshelf Application is a robust and efficient platform designed to manage 
 - `npm run heroku-postbuild`: Builds the app for deployment on Heroku.
 
 ## License
-This project is licensed under the ISC License. Please refer to the license documentation in the repository for more information.
+
+This project is licensed under the terms of the MIT license. See the [https://opensource.org/license/mit/] file for details.
+
+## Contact
+
+If you have any questions or feedback, please feel free to send me an email at [r.zeraatkar1992@gmail.com].
